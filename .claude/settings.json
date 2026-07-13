@@ -9,7 +9,8 @@
       "Bash(npx tsc *)",
       "Bash(rm -rf .next)",
       "Bash(npm run *)",
-      "Bash(curl -s -X POST http://localhost:3001/api/billplz/create-bill -H \"Content-Type: application/json\" -d '{\"name\":\"Neuro Test\",\"email\":\"neuroxxx123+test1@gmail.com\",\"phone\":\"0123456789\",\"business\":\"Test\",\"isMember\":true}')"
+      "Bash(curl -s -X POST http://localhost:3001/api/billplz/create-bill -H \"Content-Type: application/json\" -d '{\"name\":\"Neuro Test\",\"email\":\"neuroxxx123+test1@gmail.com\",\"phone\":\"0123456789\",\"business\":\"Test\",\"isMember\":true}')",
+
     ]
   }
 }
