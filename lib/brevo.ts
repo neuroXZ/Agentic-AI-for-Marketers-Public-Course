@@ -32,7 +32,10 @@ type Registrant = {
   billId: string;
 };
 
-function registrantDetailsHtml(reg: Registrant): string {
+type PaymentStatus = "pending" | "successful";
+
+function registrantDetailsHtml(reg: Registrant, status: PaymentStatus): string {
+  const statusLabel = status === "successful" ? "Berjaya" : "Menunggu";
   return `
     <ul>
       <li><strong>Nama:</strong> ${reg.name}</li>
@@ -40,19 +43,25 @@ function registrantDetailsHtml(reg: Registrant): string {
       <li><strong>Telefon:</strong> ${reg.phone}</li>
       <li><strong>Perniagaan:</strong> ${reg.business || "-"}</li>
       <li><strong>Harga:</strong> ${getPriceLabel()}</li>
+      <li><strong>Status Pembayaran:</strong> ${statusLabel}</li>
       <li><strong>Bill ID:</strong> ${reg.billId}</li>
     </ul>
   `;
 }
 
-async function sendAdminAlert(reg: Registrant, subject: string, intro: string): Promise<void> {
+async function sendAdminAlert(
+  reg: Registrant,
+  subject: string,
+  intro: string,
+  status: PaymentStatus
+): Promise<void> {
   const adminEmail = process.env.BREVO_ADMIN_EMAIL;
   if (!adminEmail) return;
 
   await sendTransactionalEmail({
     to: [{ email: adminEmail }],
     subject,
-    htmlContent: `<p>${intro}</p>${registrantDetailsHtml(reg)}`,
+    htmlContent: `<p>${intro}</p>${registrantDetailsHtml(reg, status)}`,
   });
 }
 
@@ -131,7 +140,8 @@ export async function sendAdminPendingPaymentAlert(reg: Registrant): Promise<voi
   await sendAdminAlert(
     reg,
     `Pendaftaran baharu (belum bayar): ${reg.name}`,
-    "Pendaftaran baharu dibuat, menunggu pembayaran Billplz."
+    "Pendaftaran baharu dibuat, menunggu pembayaran Billplz.",
+    "pending"
   );
 }
 
@@ -141,7 +151,8 @@ export async function sendRegistrationConfirmationEmails(reg: Registrant): Promi
   await sendAdminAlert(
     reg,
     `Pendaftaran baharu (dibayar): ${reg.name}`,
-    "Pendaftaran baharu telah disahkan."
+    "Pendaftaran baharu telah disahkan.",
+    "successful"
   );
 
   await sendTransactionalEmail({
