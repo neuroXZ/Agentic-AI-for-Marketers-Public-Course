@@ -7,7 +7,7 @@ import { upsertRegistrantContact, sendAdminPendingPaymentAlert } from "@/lib/bre
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, phone, business } = body;
+    const { name, email, phone, business, jobTitle } = body;
 
     if (!name || !email || !phone) {
       return NextResponse.json(
@@ -45,6 +45,10 @@ export async function POST(req: NextRequest) {
       params.append("reference_1_label", "Jenis Perniagaan");
       params.append("reference_1", business);
     }
+    if (jobTitle) {
+      params.append("reference_2_label", "Jawatan");
+      params.append("reference_2", jobTitle);
+    }
 
     const authHeader = "Basic " + Buffer.from(`${apiKey}:`).toString("base64");
 
@@ -78,10 +82,11 @@ export async function POST(req: NextRequest) {
         name,
         phone,
         business,
+        jobTitle,
         billId: data.id,
         paid: false,
       });
-      await sendAdminPendingPaymentAlert({ name, email, phone, business, billId: data.id });
+      await sendAdminPendingPaymentAlert({ name, email, phone, business, jobTitle, billId: data.id });
     } catch (err) {
       console.error("Failed to save registrant / notify admin via Brevo:", err);
     }

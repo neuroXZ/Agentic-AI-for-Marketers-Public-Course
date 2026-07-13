@@ -29,6 +29,7 @@ type Registrant = {
   email: string;
   phone: string;
   business?: string;
+  jobTitle?: string;
   billId: string;
 };
 
@@ -42,6 +43,7 @@ function registrantDetailsHtml(reg: Registrant, status: PaymentStatus): string {
       <li><strong>E-mel:</strong> ${reg.email}</li>
       <li><strong>Telefon:</strong> ${reg.phone}</li>
       <li><strong>Perniagaan:</strong> ${reg.business || "-"}</li>
+      <li><strong>Jawatan:</strong> ${reg.jobTitle || "-"}</li>
       <li><strong>Harga:</strong> ${getPriceLabel()}</li>
       <li><strong>Status Pembayaran:</strong> ${statusLabel}</li>
       <li><strong>Bill ID:</strong> ${reg.billId}</li>
@@ -87,6 +89,7 @@ export async function upsertRegistrantContact(reg: Registrant & { paid: boolean 
         FIRSTNAME: reg.name,
         PHONE: toE164Malaysia(reg.phone),
         COMPANY: reg.business || "",
+        JOB_TITLE: reg.jobTitle || "",
         BILL_ID: reg.billId,
         PAID: reg.paid ? "Yes" : "No",
       },

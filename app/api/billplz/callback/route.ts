@@ -43,6 +43,7 @@ export async function POST(req: NextRequest) {
     const name = payload["name"];
     const mobile = payload["mobile"];
     const business = payload["reference_1"];
+    const jobTitle = payload["reference_2"];
 
     console.log(`Billplz callback — bill ${billId} paid: ${isPaid}`);
 
@@ -53,6 +54,7 @@ export async function POST(req: NextRequest) {
           name,
           phone: mobile,
           business,
+          jobTitle,
           billId,
           paid: true,
         });
@@ -66,6 +68,7 @@ export async function POST(req: NextRequest) {
           email,
           phone: mobile,
           business,
+          jobTitle,
           billId,
         });
       } catch (err) {

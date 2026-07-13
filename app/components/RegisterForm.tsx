@@ -13,6 +13,7 @@ const schema = z.object({
     .min(9, "Nombor telefon tidak sah")
     .regex(/^[0-9+ -]+$/, "Nombor telefon tidak sah"),
   business: z.string().optional(),
+  jobTitle: z.string().optional(),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -92,7 +93,15 @@ export default function RegisterForm() {
       <div>
         <input
           {...register("business")}
-          placeholder="Jenis Perniagaan (pilihan)"
+          placeholder="Syarikat"
+          className="w-full rounded-lg bg-navy-950 border border-white/10 px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
+        />
+      </div>
+
+      <div>
+        <input
+          {...register("jobTitle")}
+          placeholder="Jawatan"
           className="w-full rounded-lg bg-navy-950 border border-white/10 px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
         />
       </div>
