@@ -14,7 +14,7 @@ export default function FinalCta() {
           href="#daftar"
           className="inline-block bg-gold-500 hover:bg-gold-400 text-white font-semibold rounded-lg px-8 py-4 transition"
         >
-          Daftar & Bayar Sekarang
+          Bayar Sekarang
         </a>
       </div>
     </section>

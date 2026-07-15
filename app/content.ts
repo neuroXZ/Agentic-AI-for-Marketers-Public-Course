@@ -3,48 +3,34 @@
 // components stay focused on layout.
 
 export const agenda = [
-  { time: "8:30 – 8:40", title: "Pembukaan & Pengenalan", duration: "10 min" },
   {
-    time: "8:40 – 9:00",
-    title: "AI Agent vs Chatbot vs Automation Biasa",
-    duration: "20 min",
+    time: "8:30 – 9:00",
+    title: "Pengenalan & Konsep: AI Agent vs Chatbot vs Automation Biasa",
+    duration: "30 min",
   },
   {
-    time: "9:00 – 9:15",
-    title: "Demo Langsung: AI Agent Automation Sebenar",
-    duration: "15 min",
-  },
-  {
-    time: "9:15 – 9:55",
-    title: "Hands-On: Bina Automation Workflow Ringkas",
-    duration: "40 min",
+    time: "9:00 – 9:55",
+    title: "Demo & Hands-On: Bina Automation Workflow Ringkas",
+    duration: "55 min",
   },
   {
     time: "9:55 – 10:10",
     title: "Showcase Hasil & Troubleshooting",
     duration: "15 min",
   },
-  { time: "10:10 – 10:25", title: "Sesi Soal Jawab (Q&A)", duration: "15 min" },
   {
-    time: "10:25 – 10:30",
-    title: "Penutup & Langkah Seterusnya",
-    duration: "5 min",
+    time: "10:10 – 10:30",
+    title: "Sesi Soal Jawab & Penutup",
+    duration: "20 min",
   },
 ];
 
-export const outcomes = [
-  "Membezakan AI agent, chatbot, dan automation biasa — dan kenapa ia trend penting untuk marketer 2026",
-  "Mengenal pasti SATU use-case automation yang sesuai untuk perniagaan anda sendiri",
-  "Membina workflow automation (trigger → logik → tindakan) menggunakan Make atau Zapier — tanpa coding",
-  "Membawa pulang template automation siap untuk digunakan terus selepas sesi",
-];
-
-export const included = [
-  "Slide ringkas sesi (10–15 slaid, fokus visual)",
-  "Template automation workflow siap import/clone",
-  "Link rakaman sesi (jika direkod) untuk rujukan semula",
-  "Satu halaman 'Langkah Seterusnya' — sumber percuma",
-  "Akses saluran Telegram/WhatsApp untuk soal jawab lanjutan",
+export const whatYouGet = [
+  "Bina SATU automation AI agent yang berfungsi — bukan sekadar teori",
+  "Guna Make/Zapier tanpa coding",
+  "Template automation siap import, terus boleh guna",
+  "Slide sesi + rakaman (jika direkod) untuk rujukan",
+  "Akses Telegram/WhatsApp untuk soalan lanjutan",
 ];
 
 export const demoWorkflowSteps = [

@@ -43,7 +43,7 @@ export default function Hero() {
             href="#daftar"
             className="inline-block bg-gold-500 hover:bg-gold-400 text-white font-semibold rounded-lg px-8 py-4 transition"
           >
-            Tempah Tempat Sekarang
+            Bayar Sekarang
           </a>
         </div>
         {/* <div className="relative aspect-[4/5] w-full max-w-sm mx-auto lg:mx-0 rounded-2xl overflow-hidden">

@@ -123,7 +123,7 @@ export default function RegisterForm() {
         disabled={loading}
         className="w-full bg-gold-500 hover:bg-gold-400 disabled:opacity-60 text-white font-semibold rounded-lg py-3 transition"
       >
-        {loading ? "Memproses..." : "Teruskan ke Pembayaran"}
+        {loading ? "Memproses..." : "Bayar Sekarang"}
       </button>
 
       <p className="text-gray-400/70 text-xs text-center">
