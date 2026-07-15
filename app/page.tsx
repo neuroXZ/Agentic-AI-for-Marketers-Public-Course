@@ -17,9 +17,10 @@ export default function Home() {
       <Outcomes />
       <DemoWorkflow />
       <Agenda />
+       <FinalCta />
       <Trainer />
       <Included />
-      <FinalCta />
+     
       <section
         id="daftar"
         className="px-6 py-20"
