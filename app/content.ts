@@ -66,7 +66,7 @@ export const trainer = {
   name: "Dr. Mohd Zulkhair Abu Kassim",
   title: "DBA · HRD Corp Accredited Trainer",
   bio: "CEO, Nusareka Digital Sdn. Bhd. & PTDOTCOM Media Digital. 10+ tahun pengalaman dalam latihan dan transformasi digital.",
-  photoUrl: "https://placehold.co/256x256/1a2540/d4af37?text=Foto",
+  photoUrl: "/image/Dr. Mohd Zulkhair.png",
   stats: [
     { value: "1000+", label: "Peserta Dilatih" },
     { value: "200+", label: "Organisasi" },

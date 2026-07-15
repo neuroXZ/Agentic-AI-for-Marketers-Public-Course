@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ms">
-      <body className="antialiased text-white">{children}</body>
+      <body className="antialiased text-gray-900">{children}</body>
     </html>
   );
 }

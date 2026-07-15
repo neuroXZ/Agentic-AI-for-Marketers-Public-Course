@@ -51,7 +51,8 @@ export default function RegisterForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-navy-900/60 border border-white/10 rounded-2xl p-6 sm:p-8 space-y-4 w-full max-w-md mx-auto"
+      className="border border-white/10 shadow-sm rounded-2xl p-6 sm:p-8 space-y-4 w-full max-w-md mx-auto"
+      style={{ backgroundColor: "#1e1b4b" }}
     >
       <h3 className="text-xl font-semibold text-white mb-2">
         Tempah Tempat Anda
@@ -61,7 +62,8 @@ export default function RegisterForm() {
         <input
           {...register("name")}
           placeholder="Nama Penuh"
-          className="w-full rounded-lg bg-navy-950 border border-white/10 px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
+          className="w-full rounded-lg border border-white/10 px-4 py-3 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-500"
+          style={{ backgroundColor: "#14123a" }}
         />
         {errors.name && (
           <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>
@@ -72,7 +74,8 @@ export default function RegisterForm() {
         <input
           {...register("email")}
           placeholder="E-mel"
-          className="w-full rounded-lg bg-navy-950 border border-white/10 px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
+          className="w-full rounded-lg border border-white/10 px-4 py-3 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-500"
+          style={{ backgroundColor: "#14123a" }}
         />
         {errors.email && (
           <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>
@@ -83,7 +86,8 @@ export default function RegisterForm() {
         <input
           {...register("phone")}
           placeholder="Nombor WhatsApp (cth: 0123456789)"
-          className="w-full rounded-lg bg-navy-950 border border-white/10 px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
+          className="w-full rounded-lg border border-white/10 px-4 py-3 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-500"
+          style={{ backgroundColor: "#14123a" }}
         />
         {errors.phone && (
           <p className="text-red-400 text-xs mt-1">{errors.phone.message}</p>
@@ -94,7 +98,8 @@ export default function RegisterForm() {
         <input
           {...register("business")}
           placeholder="Syarikat"
-          className="w-full rounded-lg bg-navy-950 border border-white/10 px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
+          className="w-full rounded-lg border border-white/10 px-4 py-3 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-500"
+          style={{ backgroundColor: "#14123a" }}
         />
       </div>
 
@@ -102,11 +107,12 @@ export default function RegisterForm() {
         <input
           {...register("jobTitle")}
           placeholder="Jawatan"
-          className="w-full rounded-lg bg-navy-950 border border-white/10 px-4 py-3 text-sm placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-gold-500"
+          className="w-full rounded-lg border border-white/10 px-4 py-3 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gold-500"
+          style={{ backgroundColor: "#14123a" }}
         />
       </div>
 
-      <div className="text-sm text-white/60">
+      <div className="text-sm text-gray-300">
         Harga: <span className="text-white font-semibold">RM59</span>
       </div>
 
@@ -120,7 +126,7 @@ export default function RegisterForm() {
         {loading ? "Memproses..." : "Teruskan ke Pembayaran"}
       </button>
 
-      <p className="text-white/40 text-xs text-center">
+      <p className="text-gray-400/70 text-xs text-center">
         Pembayaran selamat diproses melalui Billplz (FPX / Kad Kredit-Debit)
       </p>
     </form>

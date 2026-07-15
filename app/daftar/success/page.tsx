@@ -6,13 +6,13 @@ export default function SuccessPage({
   const paid = searchParams["billplz[paid]"] === "true";
 
   return (
-    <main className="min-h-screen bg-navy-950 flex items-center justify-center px-6">
+    <main className="min-h-screen bg-white flex items-center justify-center px-6">
       <div className="max-w-md text-center">
         <div className="text-5xl mb-4">{paid ? "✅" : "⚠️"}</div>
-        <h1 className="text-2xl font-bold mb-3">
+        <h1 className="text-2xl font-bold mb-3 text-gray-900">
           {paid ? "Pendaftaran Berjaya!" : "Status Pembayaran Belum Disahkan"}
         </h1>
-        <p className="text-white/70 mb-6">
+        <p className="text-gray-600 mb-6">
           {paid
             ? "Terima kasih! Resit dan link Zoom akan dihantar ke e-mel anda tidak lama lagi."
             : "Jika pembayaran anda telah selesai, sila semak e-mel anda. Jika tiada e-mel diterima dalam masa 15 minit, hubungi kami."}

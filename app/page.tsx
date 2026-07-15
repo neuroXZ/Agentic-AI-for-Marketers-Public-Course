@@ -7,10 +7,11 @@ import Trainer from "./components/sections/Trainer";
 import Included from "./components/sections/Included";
 import FinalCta from "./components/sections/FinalCta";
 import Footer from "./components/sections/Footer";
+import RegisterForm from "./components/RegisterForm";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-navy-950">
+    <main className="min-h-screen">
       <Hero />
       <WhyDifferent />
       <Outcomes />
@@ -19,6 +20,15 @@ export default function Home() {
       <Trainer />
       <Included />
       <FinalCta />
+      <section
+        id="daftar"
+        className="px-6 py-20"
+        style={{ backgroundColor: "#0a0a23" }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <RegisterForm />
+        </div>
+      </section>
       <Footer />
     </main>
   );
