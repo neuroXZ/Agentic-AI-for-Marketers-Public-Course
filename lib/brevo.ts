@@ -136,18 +136,6 @@ export async function sendTransactionalEmail({ to, subject, htmlContent }: SendE
   }
 }
 
-// Notifies the admin as soon as someone submits the form and a Billplz bill
-// is created, before payment is confirmed. sendRegistrationConfirmationEmails()
-// sends the follow-up once the Billplz callback confirms payment.
-export async function sendAdminPendingPaymentAlert(reg: Registrant): Promise<void> {
-  await sendAdminAlert(
-    reg,
-    `Pendaftaran baharu (belum bayar): ${reg.name}`,
-    "Pendaftaran baharu dibuat, menunggu pembayaran Billplz.",
-    "pending"
-  );
-}
-
 // Sends the admin notification + registrant confirmation emails once a
 // Billplz payment is confirmed via the callback route.
 export async function sendRegistrationConfirmationEmails(reg: Registrant): Promise<void> {

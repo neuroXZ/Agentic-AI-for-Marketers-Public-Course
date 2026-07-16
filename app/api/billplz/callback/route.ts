@@ -1,24 +1,29 @@
 import { NextRequest, NextResponse } from "next/server";
-import crypto from "crypto";
 import { upsertRegistrantContact, sendRegistrationConfirmationEmails } from "@/lib/brevo";
 
-// Billplz calls this endpoint server-to-server after a payment attempt
-// (X-Signature callback). Verify authenticity, then mark the registration paid.
+// Billplz calls this endpoint server-to-server after a payment attempt.
+// Rather than trusting the callback's own x_signature field (which requires
+// exactly replicating Billplz's signing algorithm), we treat the callback as
+// just a trigger to re-check and re-fetch the bill directly from Billplz's
+// API using our private API key — that's an authoritative, unspoofable
+// source of truth for whether it's actually paid.
 // Docs: https://www.billplz.com/api#callback-and-redirect-url
 
-function verifySignature(payload: Record<string, string>, xSignatureKey: string) {
-  const sourceString = Object.keys(payload)
-    .filter((k) => k !== "x_signature")
-    .sort()
-    .map((k) => `${k}${payload[k]}`)
-    .join("|");
+async function fetchBillFromBillplz(billId: string) {
+  const apiKey = process.env.BILLPLZ_API_KEY;
+  const baseUrl = process.env.BILLPLZ_BASE_URL || "https://www.billplz-sandbox.com";
+  if (!apiKey) throw new Error("Missing BILLPLZ_API_KEY");
 
-  const computed = crypto
-    .createHmac("sha256", xSignatureKey)
-    .update(sourceString)
-    .digest("hex");
+  const authHeader = "Basic " + Buffer.from(`${apiKey}:`).toString("base64");
+  const res = await fetch(`${baseUrl}/api/v3/bills/${billId}`, {
+    headers: { Authorization: authHeader },
+  });
 
-  return computed === payload["x_signature"];
+  if (!res.ok) {
+    throw new Error(`Failed to fetch bill ${billId} from Billplz (${res.status})`);
+  }
+
+  return res.json();
 }
 
 export async function POST(req: NextRequest) {
@@ -29,21 +34,18 @@ export async function POST(req: NextRequest) {
       payload[key] = String(value);
     });
 
-    const xSignatureKey = process.env.BILLPLZ_X_SIGNATURE_KEY;
-    if (xSignatureKey) {
-      const valid = verifySignature(payload, xSignatureKey);
-      if (!valid) {
-        return NextResponse.json({ error: "Invalid signature" }, { status: 403 });
-      }
+    const billId = payload["id"];
+    if (!billId) {
+      return NextResponse.json({ error: "Missing bill id" }, { status: 400 });
     }
 
-    const isPaid = payload["paid"] === "true";
-    const billId = payload["id"];
-    const email = payload["email"];
-    const name = payload["name"];
-    const mobile = payload["mobile"];
-    const business = payload["reference_1"];
-    const jobTitle = payload["reference_2"];
+    const bill = await fetchBillFromBillplz(billId);
+    const isPaid = bill.paid === true;
+    const email = bill.email;
+    const name = bill.name;
+    const mobile = bill.mobile;
+    const business = bill.reference_1;
+    const jobTitle = bill.reference_2;
 
     console.log(`Billplz callback — bill ${billId} paid: ${isPaid}`);
 

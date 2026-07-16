@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { upsertRegistrantContact, sendAdminPendingPaymentAlert } from "@/lib/brevo";
+import { upsertRegistrantContact } from "@/lib/brevo";
 
 // Creates a Billplz bill and returns the payment URL to redirect the user to.
 // Docs: https://www.billplz.com/api
@@ -75,7 +75,9 @@ export async function POST(req: NextRequest) {
     const paymentUrl = /^https?:\/\//i.test(data.url) ? data.url : `${baseUrl}${data.url}`;
 
     // Persist the registration attempt as a Brevo contact (unpaid). The callback
-    // route flips PAID to "Yes" once Billplz confirms payment.
+    // route flips PAID to "Yes" and sends the admin/registrant emails once
+    // Billplz confirms payment — nothing is emailed at this stage, so admin
+    // only gets a single email per registration (the paid confirmation).
     try {
       await upsertRegistrantContact({
         email,
@@ -86,7 +88,6 @@ export async function POST(req: NextRequest) {
         billId: data.id,
         paid: false,
       });
-      await sendAdminPendingPaymentAlert({ name, email, phone, business, jobTitle, billId: data.id });
     } catch (err) {
       console.error("Failed to save registrant / notify admin via Brevo:", err);
     }
