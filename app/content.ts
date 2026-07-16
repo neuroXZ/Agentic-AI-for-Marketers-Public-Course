@@ -4,22 +4,22 @@
 
 export const agenda = [
   {
-    time: "8:30 – 9:00",
+    time: "8:30PM – 9:00PM",
     title: "Pengenalan & Konsep: AI Agent vs Chatbot vs Automation Biasa",
     duration: "30 min",
   },
   {
-    time: "9:00 – 9:55",
+    time: "9:00PM – 9:55PM",
     title: "Demo & Hands-On: Bina Automation Workflow Ringkas",
     duration: "55 min",
   },
   {
-    time: "9:55 – 10:10",
+    time: "9:55PM – 10:10PM",
     title: "Showcase Hasil & Troubleshooting",
     duration: "15 min",
   },
   {
-    time: "10:10 – 10:30",
+    time: "10:10PM – 10:30PM",
     title: "Sesi Soal Jawab & Penutup",
     duration: "20 min",
   },

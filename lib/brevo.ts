@@ -158,6 +158,11 @@ export async function sendRegistrationConfirmationEmails(reg: Registrant): Promi
     "successful"
   );
 
+  const zoomLink = process.env.ZOOM_LINK;
+  const zoomSection = zoomLink
+    ? `<p><strong>Link Zoom:</strong> <a href="${zoomLink}">${zoomLink}</a></p>`
+    : `<p>Link Zoom/Google Meet akan dihantar menjelang tarikh sesi.</p>`;
+
   await sendTransactionalEmail({
     to: [{ email: reg.email, name: reg.name }],
     subject: "Pendaftaran Anda Disahkan — Agentic AI for Marketers",
@@ -165,7 +170,7 @@ export async function sendRegistrationConfirmationEmails(reg: Registrant): Promi
       <p>Salam ${reg.name},</p>
       <p>Terima kasih! Pendaftaran anda telah <strong>disahkan</strong> dan tempat anda untuk
       sesi <strong>Agentic AI for Marketers</strong> telah ditempah.</p>
-      <p>Link Zoom/Google Meet dan maklumat lanjut akan dihantar menjelang tarikh sesi.</p>
+      ${zoomSection}
       <p>Jumpa anda di sesi!</p>
     `,
   });
