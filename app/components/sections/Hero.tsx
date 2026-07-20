@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section
       className="relative overflow-hidden border-b border-gray-200 bg-cover bg-center"
-      style={{ backgroundImage: "url('/image/hero-bg.jpeg')" }}
+      style={{ backgroundImage: "url('/image/hero-bg.jpg')" }}
     >
       <div
         className="absolute inset-0"
