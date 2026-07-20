@@ -147,7 +147,7 @@ export async function sendRegistrationConfirmationEmails(reg: Registrant): Promi
   );
 
   const zoomLink = process.env.ZOOM_LINK;
-  const whatsappGroup = process.env.WHATSAPP_LINK;
+  const whatsappGroup = process.env.WHATSAPP_GROUP;
   const zoomSection = zoomLink
   const whatsappSection = whatsappGroup
     ? `<p><strong>Link Zoom:</strong> <a href="${zoomLink}">${zoomLink}</a></p>`
