@@ -9,10 +9,11 @@ import FAQ from "./components/sections/FAQ";
 import FinalCta from "./components/sections/FinalCta";
 import Footer from "./components/sections/Footer";
 import RegisterForm from "./components/RegisterForm";
+import StickyMobileCta from "./components/StickyMobileCta";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen pb-20 lg:pb-0">
       <Hero />
       <Outcomes />
       <DemoWorkflow />
@@ -32,6 +33,7 @@ export default function Home() {
         </div>
       </section>
       <Footer />
+      <StickyMobileCta />
     </main>
   );
 }
