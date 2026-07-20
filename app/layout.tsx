@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Agentic AI for Marketers | Sesi Taster 2 Jam - PTDOTCOM Media Digital",
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="ms">
       <body className="antialiased text-gray-900">{children}</body>
       <SpeedInsights/>
+      <Analytics />
     </html>
   );
 }
