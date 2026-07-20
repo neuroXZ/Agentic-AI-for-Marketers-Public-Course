@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { sessionInfo } from "../../content";
 
 export default function Hero() {
   return (
@@ -18,9 +19,12 @@ export default function Hero() {
           <p className="text-gold-400 font-semibold tracking-wide text-sm uppercase mb-4">
             Sesi Live Online · 2 Jam · HRD Corp Format
           </p>
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6 text-white">
+          <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-4 text-white">
             Agentic AI for Marketers
           </h1>
+          <p className="text-gold-400 font-semibold mb-6">
+            📅 {sessionInfo.day}, {sessionInfo.date} · {sessionInfo.time}
+          </p>
           <p className="text-lg text-gray-200 mb-4">
             Bina SATU automation AI agent (auto-reply lead) yang{" "}
             <span className="text-white font-medium">
@@ -39,11 +43,14 @@ export default function Hero() {
               Maksimum 25–30 peserta
             </span>
           </div>
+          <p className="text-gold-400 text-sm font-semibold mb-4">
+            🔥 Baki {sessionInfo.spotsLeft} tempat sahaja daripada {sessionInfo.totalSpots}
+          </p>
           <a
             href="#daftar"
             className="inline-block bg-gold-500 hover:bg-gold-400 text-white font-semibold rounded-lg px-8 py-4 transition"
           >
-            Bayar Sekarang
+            Tempah Tempat Sekarang
           </a>
         </div>
         {/* <div className="relative aspect-[4/5] w-full max-w-sm mx-auto lg:mx-0 rounded-2xl overflow-hidden">
