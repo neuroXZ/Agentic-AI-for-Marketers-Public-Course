@@ -147,7 +147,9 @@ export async function sendRegistrationConfirmationEmails(reg: Registrant): Promi
   );
 
   const zoomLink = process.env.ZOOM_LINK;
+  const whatsappGroup = process.env.WHATSAPP_LINK;
   const zoomSection = zoomLink
+  const whatsappSection = whatsappGroup
     ? `<p><strong>Link Zoom:</strong> <a href="${zoomLink}">${zoomLink}</a></p>`
     : `<p>Link Zoom/Google Meet akan dihantar menjelang tarikh sesi.</p>`;
 
@@ -159,6 +161,8 @@ export async function sendRegistrationConfirmationEmails(reg: Registrant): Promi
       <p>Terima kasih! Pendaftaran anda telah <strong>disahkan</strong> dan tempat anda untuk
       sesi <strong>Agentic AI for Marketers</strong> telah ditempah.</p>
       ${zoomSection}
+      <p>Join group whatsapp untuk maklumat lebih lanjut</p>
+      ${whatsappSection}
       <p>Jumpa anda di sesi!</p>
     `,
   });
