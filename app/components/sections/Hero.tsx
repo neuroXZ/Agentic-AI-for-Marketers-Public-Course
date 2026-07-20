@@ -48,7 +48,7 @@ export default function Hero() {
           </p>
           <a
             href="#daftar"
-            className="inline-block bg-gold-500 hover:bg-gold-400 text-white font-semibold rounded-lg px-8 py-4 transition"
+            className="hidden lg:inline-block bg-gold-500 hover:bg-gold-400 text-white font-semibold rounded-lg px-8 py-4 transition"
           >
             Tempah Tempat Sekarang
           </a>
