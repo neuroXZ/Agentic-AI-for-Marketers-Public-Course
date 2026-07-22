@@ -4,7 +4,7 @@ export default function Footer() {
       className="border-t border-gray-200 py-8 text-center text-gray-400 text-sm"
       style={{ backgroundColor: "#0A0A23" }}
     >
-      <p className="font-bold text-yellow-400">Contact Us</p>
+      <p className="font-bold text-gold-500">Contact Us</p>
       <p>
         <span className="inline-flex items-center gap-1.5" style={{ marginRight: "20px" }}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="red" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
