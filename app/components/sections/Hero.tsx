@@ -17,17 +17,25 @@ export default function Hero() {
       />
       <div className="relative max-w-6xl mx-auto px-6 py-20 sm:py-28 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <Image
-            src="/image/mmcsb logo white.png"
-            alt="MMCSB Logo"
-            width={160}
-            height={160}
-            className="w-40 h-auto mb-6"
-            style={{ height: "auto" }}
-            priority
-          />
+          <div className="flex items-center gap-3 mb-6">
+            <Image
+              src="/image/mmcsb-playbutton.png"
+              alt="Play Video"
+              width={40}
+              height={40}
+            />
+            <Image
+              src="/image/mmcsb logo white.png"
+              alt="MMCSB Logo"
+              width={160}
+              height={160}
+              className="w-40 h-auto"
+              style={{ height: "auto" }}
+              priority
+            />
+          </div>
           <p className="text-yellow-400 font-semibold tracking-wide text-sm uppercase mb-4">
-            Sesi Live Online · 2 Jam · HRD Corp Format
+            Sesi Live Online · 2 Jam
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-4 text-white">
             Bina AI Agent Yang Auto-Reply Lead Anda — Dalam 2 Jam, Tanpa Coding
@@ -60,13 +68,13 @@ export default function Hero() {
           </a>
         </div>
         <div className="hidden lg:flex justify-center">
-          <Image
+          {/* <Image
             src="/image/mmcsb-playbutton.png"
             alt="Play Video"
             width={300}
             height={300}
             className="w-48 h-auto"
-          />
+          /> */}
         </div>
       </div>
     </section>
