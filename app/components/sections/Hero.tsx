@@ -64,7 +64,7 @@ export default function Hero() {
             href="#daftar"
             className="hidden lg:inline-block bg-gold-500 hover:bg-gold-400 text-white font-semibold rounded-lg px-8 py-4 transition"
           >
-            Tempah Tempat Sekarang
+            Tempah Sekarang!
           </a>
         </div>
         <div className="hidden lg:flex justify-center">
