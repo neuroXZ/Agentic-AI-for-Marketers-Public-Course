@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { sessionInfo } from "../../content";
 
+
 export default function Hero() {
   return (
     <section
@@ -16,21 +17,26 @@ export default function Hero() {
       />
       <div className="relative max-w-6xl mx-auto px-6 py-20 sm:py-28 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <p className="text-gold-400 font-semibold tracking-wide text-sm uppercase mb-4">
+          <Image
+            src="/image/mmcsb logo white.png"
+            alt="MMCSB Logo"
+            width={160}
+            height={160}
+            className="w-40 h-auto mb-6"
+            style={{ height: "auto" }}
+            priority
+          />
+          <p className="text-yellow-400 font-semibold tracking-wide text-sm uppercase mb-4">
             Sesi Live Online · 2 Jam · HRD Corp Format
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-4 text-white">
-            Agentic AI for Marketers
+            Bina AI Agent Yang Auto-Reply Lead Anda — Dalam 2 Jam, Tanpa Coding
           </h1>
-          <p className="text-gold-400 font-semibold mb-6">
+          <p className="text-yellow-400 font-semibold mb-6">
             📅 {sessionInfo.day}, {sessionInfo.date} · {sessionInfo.time}
           </p>
           <p className="text-lg text-gray-200 mb-4">
-            Bina SATU automation AI agent (auto-reply lead) yang{" "}
-            <span className="text-white font-medium">
-              benar-benar berfungsi
-            </span>{" "}
-            — bukan sekadar teori. Tanpa pengalaman coding.
+            Lead masuk jam 11 malam, anda tengah tidur? Lepas sesi ni, AI Agent anda yang reply — bukan anda. Bina SATU automation sebenar dalam 2 jam, tanpa coding.
           </p>
           <div className="flex flex-wrap gap-3 text-sm text-gray-200 mb-8">
             <span className="bg-white/10 border border-white/20 rounded-full px-4 py-1.5">
@@ -40,12 +46,12 @@ export default function Hero() {
               Zoom / Google Meet
             </span>
             <span className="bg-white/10 border border-white/20 rounded-full px-4 py-1.5">
-              Maksimum 25–30 peserta
+              Maksimum 50 peserta
             </span>
           </div>
-          <p className="text-gold-400 text-sm font-semibold mb-4">
+          {/* <p className="text-yellow-400 text-sm font-semibold mb-4">
             🔥 Baki {sessionInfo.spotsLeft} tempat sahaja daripada {sessionInfo.totalSpots}
-          </p>
+          </p> */}
           <a
             href="#daftar"
             className="hidden lg:inline-block bg-gold-500 hover:bg-gold-400 text-white font-semibold rounded-lg px-8 py-4 transition"
@@ -53,15 +59,15 @@ export default function Hero() {
             Tempah Tempat Sekarang
           </a>
         </div>
-        {/* <div className="relative aspect-[4/5] w-full max-w-sm mx-auto lg:mx-0 rounded-2xl overflow-hidden">
+        <div className="hidden lg:flex justify-center">
           <Image
-            src="/image/Dr. Mohd Zulkhair.png"
-            alt="Dr. Mohd Zulkhair"
-            fill
-            className="object-contain"
-            priority
+            src="/image/mmcsb-playbutton.png"
+            alt="Play Video"
+            width={300}
+            height={300}
+            className="w-48 h-auto"
           />
-        </div> */}
+        </div>
       </div>
     </section>
   );

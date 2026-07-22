@@ -7,7 +7,7 @@ export default function DemoWorkflow() {
         Use-Case: Auto-Reply Lead
       </h2>
       <p className="text-gray-500 text-center mb-10 max-w-2xl mx-auto">
-        Workflow yang akan anda bina bersama semasa sesi hands-on
+        Bina workflow auto reply anda!
       </p>
       <div className="grid sm:grid-cols-3 gap-5">
         {demoWorkflowSteps.map((item) => (

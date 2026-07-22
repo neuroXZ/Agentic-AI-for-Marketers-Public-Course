@@ -6,7 +6,7 @@ export default function FinalCta() {
     <section className="bg-gray-50 border-y border-gray-200 py-16">
       <div className="max-w-3xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold mb-2 text-gray-900">
-          Tempat Terhad — 25–30 Peserta Sahaja
+          Tempat Terhad — 50 Peserta Sahaja
         </h2>
         <p className="text-gold-500 font-semibold mb-4">
           {sessionInfo.day}, {sessionInfo.date} · Baki {sessionInfo.spotsLeft} tempat sahaja
@@ -19,7 +19,7 @@ export default function FinalCta() {
           href="#daftar"
           className="hidden lg:inline-block bg-gold-500 hover:bg-gold-400 text-white font-semibold rounded-lg px-8 py-4 transition"
         >
-          Tempah Tempat Terakhir Anda
+          Tempah Sekarang!
         </a>
       </div>
     </section>

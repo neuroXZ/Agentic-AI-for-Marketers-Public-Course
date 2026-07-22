@@ -29,8 +29,9 @@ export const whatYouGet = [
   "Bina SATU automation AI agent yang berfungsi — bukan sekadar teori",
   "Guna Make/Zapier tanpa coding",
   "Template automation siap import, terus boleh guna",
-  "Slide sesi + rakaman (jika direkod) untuk rujukan",
+  "Slide sesi + rakaman untuk rujukan",
   "Akses Telegram/WhatsApp untuk soalan lanjutan",
+  "Faham beza AI Agent vs Chatbot biasa — dan kenapa ni trend besar 2026",
 ];
 
 export const demoWorkflowSteps = [
@@ -63,10 +64,10 @@ export const trainer = {
 // Tarikh & kekangan tempat untuk sesi akan datang.
 // Kemaskini `spotsLeft` secara manual apabila pendaftaran masuk.
 export const sessionInfo = {
-  date: "31 Ogos 2026",
-  day: "Isnin",
+  date: "18 August 2026",
+  day: "Selasa",
   time: "8:30 – 10:30 malam",
-  totalSpots: 30,
+  totalSpots: 50,
   spotsLeft: 12,
 };
 
@@ -122,11 +123,10 @@ export const pricing = {
   price: 59,
   originalValue: 299,
   items: [
-    { label: "Sesi Live 2 Jam bersama Trainer HRD Corp Accredited", value: 150 },
-    { label: "Template Automation Siap Import", value: 49 },
-    { label: "Slide Sesi (PDF)", value: 30 },
-    { label: "Akses Rakaman Sesi", value: 40 },
-    { label: "Akses Group Telegram/WhatsApp Susulan", value: 30 },
+    { label: "Sesi Live 2 Jam bersama Trainer HRD Corp Accredited", value: 70 },
+    { label: "Template Automation Siap Import (FREE)", value: 0 },
+    { label: "Akses Rakaman Sesi (FREE)", value: 0 },
+    { label: "Akses Group Telegram/WhatsApp Susulan (FREE)", value: 0 },
   ],
 };
 
@@ -138,7 +138,7 @@ export const faqs = [
   },
   {
     q: "Macam mana refund policy?",
-    a: "Disebabkan tempat yang sangat terhad (25–30 peserta sahaja), bayaran yang telah dibuat adalah tidak refundable. Walau bagaimanapun, jika anda tidak dapat hadir pada tarikh sesi, slot anda boleh dipindahkan ke sesi akan datang (tertakluk kepada tempat yang ada) — hubungi kami sebelum tarikh sesi.",
+    a: "Yuran penyertaan tidak boleh di kembalikan pada sesi tersebut pada masa dan waktu yang di tetapkan.",
   },
   {
     q: "Perlu laptop atau software apa untuk ikut sesi ni?",
@@ -148,4 +148,5 @@ export const faqs = [
     q: "Sesi ni sesuai untuk saya yang non-tech, level macam mana?",
     a: "Sesi ini direka khas untuk marketer dan pemilik bisnes yang TIADA pengalaman coding langsung. Selagi anda biasa guna komputer, buka website dan copy-paste, anda boleh ikuti step-by-step tanpa masalah.",
   },
+ 
 ];
